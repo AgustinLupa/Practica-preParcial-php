@@ -29,8 +29,11 @@
                       foreach($tasks as $t){        
                   ?>
                 
-                  <li class="list-group-item"><h4><?php echo ($t['title']); ?></h4> <h5><?php echo ($t['description']); ?></h5></li>                                                   
-                  <a href="<?php echo site_url("taskcontroller/delete_task?id=".$t['id']) ?>" class="btn btn-outline-danger">Eliminar</a>            
+                  <li class="list-group-item"><h4><?php echo ($t['title']); ?></h4> <h5><?php echo ($t['description']); ?></h5></li>
+                  <br>                                                   
+                  <a href="<?php echo site_url("taskcontroller/delete_task?id=".$t['id']) ?>" class="btn btn-outline-danger">Eliminar</a>
+                  <br>
+                  <a href="<?php echo site_url('taskcontroller/viewUpDate?id='.$t['id']) ?>" class="btn btn-outline-primary">Actualizar</a>            
                 <br>
             <?php } ?>
             </ul>

@@ -19,6 +19,11 @@
         $this->db->delete($this->table);        
     }
 
+    public function updateTask($data){
+        $this->db->where('id', $data['id']);
+        $this->db->update($this->table, $data);    
+    }
+
  }
 
 ?>

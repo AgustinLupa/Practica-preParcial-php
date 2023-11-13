@@ -13,6 +13,7 @@
         }
 
         public function insert_task(){
+
         
             $data['title'] = $this->input->post('title');
             $data['description'] = $this->input->post('desc');
@@ -24,6 +25,20 @@
         public function delete_task(){
             $id = $this->input->get('id');
             $this->task->deleteTask($id);
+
+            redirect('/');
+        }
+
+        public function viewUpDate(){
+            $id['id'] = $this->input->get('id');
+            $this->load->view('task/taskupdate', $id);
+        }
+
+        public function updateTask(){
+            $data['id'] = $this->input->post('id');
+            $data['title'] = $this->input->post('title');
+            $data['description'] = $this->input->post('desc');
+            $this->task->updateTask($data);
 
             redirect('/');
         }
